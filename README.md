@@ -1,1 +1,3 @@
-# laradock_trial
+# laradock_trial(laradockのお試し)
+
+
