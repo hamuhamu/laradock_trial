@@ -32,8 +32,8 @@ db: install
 ps:
 	$(DOCKER_COMPOSE) ps
 
-ssh/workspace:
-	docker exec -it laradock_workspace_1 /bin/bash
+ssh/workspace: install
+	$(DOCKER_COMPOSE) exec workspace bash
 
 clean:
 	rm -rf ./laradock
