@@ -34,3 +34,6 @@ ps:
 
 ssh/workspace:
 	docker exec -it laradock_workspace_1 /bin/bash
+
+clean:
+	rm -rf ./laradock
