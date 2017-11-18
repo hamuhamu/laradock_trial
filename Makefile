@@ -20,10 +20,10 @@ down: laradock
 
 laradock:
 	git clone -b $(LARADOCK_BRANCH) $(LARADOCK_REPO)
-	$(MAKE) laradock/patch/apply
+	$(MAKE) laradock/env
 
-laradock/patch/apply: laradock
-	cp ./laradock/env-example ./laradock/.env
+laradock/env: laradock
+	cp ./env-example ./laradock/.env
 	ln -sf ./laradock/.env .env
 
 db: install
