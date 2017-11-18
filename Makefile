@@ -25,3 +25,6 @@ laradock:
 laradock/patch/apply: laradock
 	cp ./laradock/env-example ./laradock/.env
 	ln -sf ./laradock/.env .env
+
+ps:
+	$(DOCKER_COMPOSE) ps
