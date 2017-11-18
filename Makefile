@@ -3,6 +3,10 @@ LARADOCK_BRANCH = v5.8.0
 DOCKER_COMPOSE := $(shell which docker-compose) -f laradock/docker-compose.yml
 MAKE := $(shell which make)
 
+DB_USER = default
+DB_PASSWORD = secret
+DB_NAME = default
+
 help:
 	cat ./Makefile
 
@@ -25,7 +29,7 @@ laradock/env: laradock
 	ln -sf ./laradock/.env .env
 
 db: install
-	$(DOCKER_COMPOSE) exec mysql mysql -udefault -psecret default
+	$(DOCKER_COMPOSE) exec mysql mysql -u$(DB_USER) -p$(DB_PASSWORD) $(DB_NAME)
 
 ps:
 	$(DOCKER_COMPOSE) ps
