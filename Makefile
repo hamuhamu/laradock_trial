@@ -26,5 +26,8 @@ laradock/patch/apply: laradock
 	cp ./laradock/env-example ./laradock/.env
 	ln -sf ./laradock/.env .env
 
+db: install
+	$(DOCKER_COMPOSE) exec mysql mysql -udefault -psecret default
+
 ps:
 	$(DOCKER_COMPOSE) ps
